@@ -29,6 +29,17 @@
 #include "layer_logic/api/lsils/pass/map_asic.hpp"
 #include "layer_logic/api/lsils/pass/strash.hpp"
 
+#include "layer_logic/api/lsnbu/exact_map.hpp"
+#include "layer_logic/api/lsnbu/lut_resyn.hpp"
+#include "layer_logic/api/lsnbu/mighty.hpp"
+#include "layer_logic/api/lsnbu/xag_mprm_multi_mult_opt.hpp"
+#include "layer_logic/api/lsnbu/xag_mprm2_area_opt.hpp"
+#include "layer_logic/api/lsnbu/xagba.hpp"
+#include "layer_logic/api/lsnbu/xagrs.hpp"
+#include "layer_logic/api/lsnbu/xagrw.hpp"
+#include "layer_logic/api/lsnbu/xmgrs.hpp"
+#include "layer_logic/api/lsnbu/xmgrw.hpp"
+
 namespace lf
 {
 
@@ -841,6 +852,636 @@ public:
     return 1;
   }
 }; // class CmdLfLogicMapASIC
+
+class CmdLfLogicXMGRewrite : public TclCmd
+{
+public:
+  explicit CmdLfLogicXMGRewrite( const char* cmd_name )
+      : TclCmd( cmd_name )
+  {
+    // set the description
+    std::string description = "";
+    this->set_description( description );
+    std::string domain = "logic";
+    this->set_domain( domain );
+    // set the options
+    std::vector<lfCmdOption> options = {};
+    setOptions( this, options );
+  }
+
+  ~CmdLfLogicXMGRewrite() override = default;
+
+  unsigned check() override
+  {
+    std::vector<std::string> essential = {};
+    return checkEssentialOptions( this, essential );
+  }
+
+  unsigned exec() override
+  {
+    if ( !check() )
+      return 0;
+
+    std::map<std::string, std::string> strOptionsValue;
+    std::map<std::string, bool> boolOptionsValue;
+    std::map<std::string, int> intOptionsValue;
+    std::map<std::string, double> doubleOptionsValue;
+    std::map<std::string, std::vector<std::string>> strvecOptionsValue;
+    std::map<std::string, std::vector<int>> intvecOptionsValue;
+    std::map<std::string, std::vector<double>> doublevecOptionsValue;
+
+    std::vector<std::string> strOptions = {};
+    std::vector<std::string> boolOptions = {};
+    std::vector<std::string> intOptions = {};
+    std::vector<std::string> doubleOptions = {};
+    std::vector<std::string> strvecOptions = {};
+    std::vector<std::string> intvecOptions = {};
+    std::vector<std::string> doublevecOptions = {};
+
+    extractOptions( this, strOptions, boolOptions, intOptions, doubleOptions, strvecOptions, intvecOptions, doublevecOptions,
+                    strOptionsValue, boolOptionsValue, intOptionsValue, doubleOptionsValue, strvecOptionsValue, intvecOptionsValue, doublevecOptionsValue );
+
+    auto anchor_tool_domain = lfAnchorINST->get_anchor_tool_domain();
+
+    switch ( anchor_tool_domain )
+    {
+    case lf::misc::E_LF_ANCHOR_TOOL::E_LF_ANCHOR_TOOL_LOGIC_LSILS:
+      lf::logic::lsnbu::xmgrw();
+      break;
+    default:
+      std::cerr << "Unsupported anchor domain, please use anchor to set the anchor!" << std::endl;
+      return 0;
+    }
+    return 1;
+  }
+}; // class CmdLfLogicXMGRewrite
+
+class CmdLfLogicXAG1 : public TclCmd
+{
+public:
+  explicit CmdLfLogicXAG1( const char* cmd_name )
+      : TclCmd( cmd_name )
+  {
+    // set the description
+    std::string description = "";
+    this->set_description( description );
+    std::string domain = "logic";
+    this->set_domain( domain );
+    // set the options
+    std::vector<lfCmdOption> options = {};
+    setOptions( this, options );
+  }
+
+  ~CmdLfLogicXAG1() override = default;
+
+  unsigned check() override
+  {
+    std::vector<std::string> essential = {};
+    return checkEssentialOptions( this, essential );
+  }
+
+  unsigned exec() override
+  {
+    if ( !check() )
+      return 0;
+
+    std::map<std::string, std::string> strOptionsValue;
+    std::map<std::string, bool> boolOptionsValue;
+    std::map<std::string, int> intOptionsValue;
+    std::map<std::string, double> doubleOptionsValue;
+    std::map<std::string, std::vector<std::string>> strvecOptionsValue;
+    std::map<std::string, std::vector<int>> intvecOptionsValue;
+    std::map<std::string, std::vector<double>> doublevecOptionsValue;
+
+    std::vector<std::string> strOptions = {};
+    std::vector<std::string> boolOptions = {};
+    std::vector<std::string> intOptions = {};
+    std::vector<std::string> doubleOptions = {};
+    std::vector<std::string> strvecOptions = {};
+    std::vector<std::string> intvecOptions = {};
+    std::vector<std::string> doublevecOptions = {};
+
+    extractOptions( this, strOptions, boolOptions, intOptions, doubleOptions, strvecOptions, intvecOptions, doublevecOptions,
+                    strOptionsValue, boolOptionsValue, intOptionsValue, doubleOptionsValue, strvecOptionsValue, intvecOptionsValue, doublevecOptionsValue );
+
+    auto anchor_tool_domain = lfAnchorINST->get_anchor_tool_domain();
+
+    switch ( anchor_tool_domain )
+    {
+    case lf::misc::E_LF_ANCHOR_TOOL::E_LF_ANCHOR_TOOL_LOGIC_LSILS:
+      lf::logic::lsnbu::xag_mprm2_area_opt();
+      break;
+    default:
+      std::cerr << "Unsupported anchor domain, please use anchor to set the anchor!" << std::endl;
+      return 0;
+    }
+    return 1;
+  }
+}; // class CmdLfLogicXAG1
+
+class CmdLfLogicXAG2 : public TclCmd
+{
+public:
+  explicit CmdLfLogicXAG2( const char* cmd_name )
+      : TclCmd( cmd_name )
+  {
+    // set the description
+    std::string description = "";
+    this->set_description( description );
+    std::string domain = "logic";
+    this->set_domain( domain );
+    // set the options
+    std::vector<lfCmdOption> options = {};
+    setOptions( this, options );
+  }
+
+  ~CmdLfLogicXAG2() override = default;
+
+  unsigned check() override
+  {
+    std::vector<std::string> essential = {};
+    return checkEssentialOptions( this, essential );
+  }
+
+  unsigned exec() override
+  {
+    if ( !check() )
+      return 0;
+
+    std::map<std::string, std::string> strOptionsValue;
+    std::map<std::string, bool> boolOptionsValue;
+    std::map<std::string, int> intOptionsValue;
+    std::map<std::string, double> doubleOptionsValue;
+    std::map<std::string, std::vector<std::string>> strvecOptionsValue;
+    std::map<std::string, std::vector<int>> intvecOptionsValue;
+    std::map<std::string, std::vector<double>> doublevecOptionsValue;
+
+    std::vector<std::string> strOptions = {};
+    std::vector<std::string> boolOptions = {};
+    std::vector<std::string> intOptions = {};
+    std::vector<std::string> doubleOptions = {};
+    std::vector<std::string> strvecOptions = {};
+    std::vector<std::string> intvecOptions = {};
+    std::vector<std::string> doublevecOptions = {};
+
+    extractOptions( this, strOptions, boolOptions, intOptions, doubleOptions, strvecOptions, intvecOptions, doublevecOptions,
+                    strOptionsValue, boolOptionsValue, intOptionsValue, doubleOptionsValue, strvecOptionsValue, intvecOptionsValue, doublevecOptionsValue );
+
+    auto anchor_tool_domain = lfAnchorINST->get_anchor_tool_domain();
+
+    switch ( anchor_tool_domain )
+    {
+    case lf::misc::E_LF_ANCHOR_TOOL::E_LF_ANCHOR_TOOL_LOGIC_LSILS:
+      lf::logic::lsnbu::xag_mprm_multi_mult_opt();
+      break;
+    default:
+      std::cerr << "Unsupported anchor domain, please use anchor to set the anchor!" << std::endl;
+      return 0;
+    }
+    return 1;
+  }
+}; // class CmdLfLogicXAG2
+
+class CmdLfLogicExactMap : public TclCmd
+{
+public:
+  explicit CmdLfLogicExactMap( const char* cmd_name )
+      : TclCmd( cmd_name )
+  {
+    // set the description
+    std::string description = "";
+    this->set_description( description );
+    std::string domain = "logic";
+    this->set_domain( domain );
+    // set the options
+    std::vector<lfCmdOption> options = {};
+    setOptions( this, options );
+  }
+
+  ~CmdLfLogicExactMap() override = default;
+
+  unsigned check() override
+  {
+    std::vector<std::string> essential = {};
+    return checkEssentialOptions( this, essential );
+  }
+
+  unsigned exec() override
+  {
+    if ( !check() )
+      return 0;
+
+    std::map<std::string, std::string> strOptionsValue;
+    std::map<std::string, bool> boolOptionsValue;
+    std::map<std::string, int> intOptionsValue;
+    std::map<std::string, double> doubleOptionsValue;
+    std::map<std::string, std::vector<std::string>> strvecOptionsValue;
+    std::map<std::string, std::vector<int>> intvecOptionsValue;
+    std::map<std::string, std::vector<double>> doublevecOptionsValue;
+
+    std::vector<std::string> strOptions = {};
+    std::vector<std::string> boolOptions = {};
+    std::vector<std::string> intOptions = {};
+    std::vector<std::string> doubleOptions = {};
+    std::vector<std::string> strvecOptions = {};
+    std::vector<std::string> intvecOptions = {};
+    std::vector<std::string> doublevecOptions = {};
+
+    extractOptions( this, strOptions, boolOptions, intOptions, doubleOptions, strvecOptions, intvecOptions, doublevecOptions,
+                    strOptionsValue, boolOptionsValue, intOptionsValue, doubleOptionsValue, strvecOptionsValue, intvecOptionsValue, doublevecOptionsValue );
+
+    auto anchor_tool_domain = lfAnchorINST->get_anchor_tool_domain();
+
+    switch ( anchor_tool_domain )
+    {
+    case lf::misc::E_LF_ANCHOR_TOOL::E_LF_ANCHOR_TOOL_LOGIC_LSILS:
+      lf::logic::lsnbu::exact_map();
+      break;
+    default:
+      std::cerr << "Unsupported anchor domain, please use anchor to set the anchor!" << std::endl;
+      return 0;
+    }
+    return 1;
+  }
+}; // class CmdLfLogicExactMap
+
+class CmdLfLogicLutResyn : public TclCmd
+{
+public:
+  explicit CmdLfLogicLutResyn( const char* cmd_name )
+      : TclCmd( cmd_name )
+  {
+    // set the description
+    std::string description = "";
+    this->set_description( description );
+    std::string domain = "logic";
+    this->set_domain( domain );
+    // set the options
+    std::vector<lfCmdOption> options = {};
+    setOptions( this, options );
+  }
+
+  ~CmdLfLogicLutResyn() override = default;
+
+  unsigned check() override
+  {
+    std::vector<std::string> essential = {};
+    return checkEssentialOptions( this, essential );
+  }
+
+  unsigned exec() override
+  {
+    if ( !check() )
+      return 0;
+
+    std::map<std::string, std::string> strOptionsValue;
+    std::map<std::string, bool> boolOptionsValue;
+    std::map<std::string, int> intOptionsValue;
+    std::map<std::string, double> doubleOptionsValue;
+    std::map<std::string, std::vector<std::string>> strvecOptionsValue;
+    std::map<std::string, std::vector<int>> intvecOptionsValue;
+    std::map<std::string, std::vector<double>> doublevecOptionsValue;
+
+    std::vector<std::string> strOptions = {};
+    std::vector<std::string> boolOptions = {};
+    std::vector<std::string> intOptions = {};
+    std::vector<std::string> doubleOptions = {};
+    std::vector<std::string> strvecOptions = {};
+    std::vector<std::string> intvecOptions = {};
+    std::vector<std::string> doublevecOptions = {};
+
+    extractOptions( this, strOptions, boolOptions, intOptions, doubleOptions, strvecOptions, intvecOptions, doublevecOptions,
+                    strOptionsValue, boolOptionsValue, intOptionsValue, doubleOptionsValue, strvecOptionsValue, intvecOptionsValue, doublevecOptionsValue );
+
+    auto anchor_tool_domain = lfAnchorINST->get_anchor_tool_domain();
+
+    switch ( anchor_tool_domain )
+    {
+    case lf::misc::E_LF_ANCHOR_TOOL::E_LF_ANCHOR_TOOL_LOGIC_LSILS:
+      lf::logic::lsnbu::lut_resyn();
+      break;
+    default:
+      std::cerr << "Unsupported anchor domain, please use anchor to set the anchor!" << std::endl;
+      return 0;
+    }
+    return 1;
+  }
+}; // class CmdLfLogicLutResyn
+
+class CmdLfLogicMighty : public TclCmd
+{
+public:
+  explicit CmdLfLogicMighty( const char* cmd_name )
+      : TclCmd( cmd_name )
+  {
+    // set the description
+    std::string description = "";
+    this->set_description( description );
+    std::string domain = "logic";
+    this->set_domain( domain );
+    // set the options
+    std::vector<lfCmdOption> options = {};
+    setOptions( this, options );
+  }
+
+  ~CmdLfLogicMighty() override = default;
+
+  unsigned check() override
+  {
+    std::vector<std::string> essential = {};
+    return checkEssentialOptions( this, essential );
+  }
+
+  unsigned exec() override
+  {
+    if ( !check() )
+      return 0;
+
+    std::map<std::string, std::string> strOptionsValue;
+    std::map<std::string, bool> boolOptionsValue;
+    std::map<std::string, int> intOptionsValue;
+    std::map<std::string, double> doubleOptionsValue;
+    std::map<std::string, std::vector<std::string>> strvecOptionsValue;
+    std::map<std::string, std::vector<int>> intvecOptionsValue;
+    std::map<std::string, std::vector<double>> doublevecOptionsValue;
+
+    std::vector<std::string> strOptions = {};
+    std::vector<std::string> boolOptions = {};
+    std::vector<std::string> intOptions = {};
+    std::vector<std::string> doubleOptions = {};
+    std::vector<std::string> strvecOptions = {};
+    std::vector<std::string> intvecOptions = {};
+    std::vector<std::string> doublevecOptions = {};
+
+    extractOptions( this, strOptions, boolOptions, intOptions, doubleOptions, strvecOptions, intvecOptions, doublevecOptions,
+                    strOptionsValue, boolOptionsValue, intOptionsValue, doubleOptionsValue, strvecOptionsValue, intvecOptionsValue, doublevecOptionsValue );
+
+    auto anchor_tool_domain = lfAnchorINST->get_anchor_tool_domain();
+
+    switch ( anchor_tool_domain )
+    {
+    case lf::misc::E_LF_ANCHOR_TOOL::E_LF_ANCHOR_TOOL_LOGIC_LSILS:
+      lf::logic::lsnbu::mighty_rewrite();
+      break;
+    default:
+      std::cerr << "Unsupported anchor domain, please use anchor to set the anchor!" << std::endl;
+      return 0;
+    }
+    return 1;
+  }
+}; // class CmdLfLogicMighty
+
+class CmdLfLogicXAGBalance : public TclCmd
+{
+public:
+  explicit CmdLfLogicXAGBalance( const char* cmd_name )
+      : TclCmd( cmd_name )
+  {
+    // set the description
+    std::string description = "";
+    this->set_description( description );
+    std::string domain = "logic";
+    this->set_domain( domain );
+    // set the options
+    std::vector<lfCmdOption> options = {};
+    setOptions( this, options );
+  }
+
+  ~CmdLfLogicXAGBalance() override = default;
+
+  unsigned check() override
+  {
+    std::vector<std::string> essential = {};
+    return checkEssentialOptions( this, essential );
+  }
+
+  unsigned exec() override
+  {
+    if ( !check() )
+      return 0;
+
+    std::map<std::string, std::string> strOptionsValue;
+    std::map<std::string, bool> boolOptionsValue;
+    std::map<std::string, int> intOptionsValue;
+    std::map<std::string, double> doubleOptionsValue;
+    std::map<std::string, std::vector<std::string>> strvecOptionsValue;
+    std::map<std::string, std::vector<int>> intvecOptionsValue;
+    std::map<std::string, std::vector<double>> doublevecOptionsValue;
+
+    std::vector<std::string> strOptions = {};
+    std::vector<std::string> boolOptions = {};
+    std::vector<std::string> intOptions = {};
+    std::vector<std::string> doubleOptions = {};
+    std::vector<std::string> strvecOptions = {};
+    std::vector<std::string> intvecOptions = {};
+    std::vector<std::string> doublevecOptions = {};
+
+    extractOptions( this, strOptions, boolOptions, intOptions, doubleOptions, strvecOptions, intvecOptions, doublevecOptions,
+                    strOptionsValue, boolOptionsValue, intOptionsValue, doubleOptionsValue, strvecOptionsValue, intvecOptionsValue, doublevecOptionsValue );
+
+    auto anchor_tool_domain = lfAnchorINST->get_anchor_tool_domain();
+
+    switch ( anchor_tool_domain )
+    {
+    case lf::misc::E_LF_ANCHOR_TOOL::E_LF_ANCHOR_TOOL_LOGIC_LSILS:
+      lf::logic::lsnbu::xagba();
+      break;
+    default:
+      std::cerr << "Unsupported anchor domain, please use anchor to set the anchor!" << std::endl;
+      return 0;
+    }
+    return 1;
+  }
+}; // class CmdLfLogicXAGBalance
+
+class CmdLfLogicXAGResub : public TclCmd
+{
+public:
+  explicit CmdLfLogicXAGResub( const char* cmd_name )
+      : TclCmd( cmd_name )
+  {
+    // set the description
+    std::string description = "";
+    this->set_description( description );
+    std::string domain = "logic";
+    this->set_domain( domain );
+    // set the options
+    std::vector<lfCmdOption> options = {};
+    setOptions( this, options );
+  }
+
+  ~CmdLfLogicXAGResub() override = default;
+
+  unsigned check() override
+  {
+    std::vector<std::string> essential = {};
+    return checkEssentialOptions( this, essential );
+  }
+
+  unsigned exec() override
+  {
+    if ( !check() )
+      return 0;
+
+    std::map<std::string, std::string> strOptionsValue;
+    std::map<std::string, bool> boolOptionsValue;
+    std::map<std::string, int> intOptionsValue;
+    std::map<std::string, double> doubleOptionsValue;
+    std::map<std::string, std::vector<std::string>> strvecOptionsValue;
+    std::map<std::string, std::vector<int>> intvecOptionsValue;
+    std::map<std::string, std::vector<double>> doublevecOptionsValue;
+
+    std::vector<std::string> strOptions = {};
+    std::vector<std::string> boolOptions = {};
+    std::vector<std::string> intOptions = {};
+    std::vector<std::string> doubleOptions = {};
+    std::vector<std::string> strvecOptions = {};
+    std::vector<std::string> intvecOptions = {};
+    std::vector<std::string> doublevecOptions = {};
+
+    extractOptions( this, strOptions, boolOptions, intOptions, doubleOptions, strvecOptions, intvecOptions, doublevecOptions,
+                    strOptionsValue, boolOptionsValue, intOptionsValue, doubleOptionsValue, strvecOptionsValue, intvecOptionsValue, doublevecOptionsValue );
+
+    auto anchor_tool_domain = lfAnchorINST->get_anchor_tool_domain();
+
+    switch ( anchor_tool_domain )
+    {
+    case lf::misc::E_LF_ANCHOR_TOOL::E_LF_ANCHOR_TOOL_LOGIC_LSILS:
+      lf::logic::lsnbu::xagrs();
+      break;
+    default:
+      std::cerr << "Unsupported anchor domain, please use anchor to set the anchor!" << std::endl;
+      return 0;
+    }
+    return 1;
+  }
+}; // class CmdLfLogicXAGResub
+
+class CmdLfLogicXAGRewrite : public TclCmd
+{
+public:
+  explicit CmdLfLogicXAGRewrite( const char* cmd_name )
+      : TclCmd( cmd_name )
+  {
+    // set the description
+    std::string description = "";
+    this->set_description( description );
+    std::string domain = "logic";
+    this->set_domain( domain );
+    // set the options
+    std::vector<lfCmdOption> options = {};
+    setOptions( this, options );
+  }
+
+  ~CmdLfLogicXAGRewrite() override = default;
+
+  unsigned check() override
+  {
+    std::vector<std::string> essential = {};
+    return checkEssentialOptions( this, essential );
+  }
+
+  unsigned exec() override
+  {
+    if ( !check() )
+      return 0;
+
+    std::map<std::string, std::string> strOptionsValue;
+    std::map<std::string, bool> boolOptionsValue;
+    std::map<std::string, int> intOptionsValue;
+    std::map<std::string, double> doubleOptionsValue;
+    std::map<std::string, std::vector<std::string>> strvecOptionsValue;
+    std::map<std::string, std::vector<int>> intvecOptionsValue;
+    std::map<std::string, std::vector<double>> doublevecOptionsValue;
+
+    std::vector<std::string> strOptions = {};
+    std::vector<std::string> boolOptions = {};
+    std::vector<std::string> intOptions = {};
+    std::vector<std::string> doubleOptions = {};
+    std::vector<std::string> strvecOptions = {};
+    std::vector<std::string> intvecOptions = {};
+    std::vector<std::string> doublevecOptions = {};
+
+    extractOptions( this, strOptions, boolOptions, intOptions, doubleOptions, strvecOptions, intvecOptions, doublevecOptions,
+                    strOptionsValue, boolOptionsValue, intOptionsValue, doubleOptionsValue, strvecOptionsValue, intvecOptionsValue, doublevecOptionsValue );
+
+    auto anchor_tool_domain = lfAnchorINST->get_anchor_tool_domain();
+
+    switch ( anchor_tool_domain )
+    {
+    case lf::misc::E_LF_ANCHOR_TOOL::E_LF_ANCHOR_TOOL_LOGIC_LSILS:
+      lf::logic::lsnbu::xagrw();
+      break;
+    default:
+      std::cerr << "Unsupported anchor domain, please use anchor to set the anchor!" << std::endl;
+      return 0;
+    }
+    return 1;
+  }
+}; // class CmdLfLogicXAGRewrite
+
+class CmdLfLogicXMGResub : public TclCmd
+{
+public:
+  explicit CmdLfLogicXMGResub( const char* cmd_name )
+      : TclCmd( cmd_name )
+  {
+    // set the description
+    std::string description = "";
+    this->set_description( description );
+    std::string domain = "logic";
+    this->set_domain( domain );
+    // set the options
+    std::vector<lfCmdOption> options = {};
+    setOptions( this, options );
+  }
+
+  ~CmdLfLogicXMGResub() override = default;
+
+  unsigned check() override
+  {
+    std::vector<std::string> essential = {};
+    return checkEssentialOptions( this, essential );
+  }
+
+  unsigned exec() override
+  {
+    if ( !check() )
+      return 0;
+
+    std::map<std::string, std::string> strOptionsValue;
+    std::map<std::string, bool> boolOptionsValue;
+    std::map<std::string, int> intOptionsValue;
+    std::map<std::string, double> doubleOptionsValue;
+    std::map<std::string, std::vector<std::string>> strvecOptionsValue;
+    std::map<std::string, std::vector<int>> intvecOptionsValue;
+    std::map<std::string, std::vector<double>> doublevecOptionsValue;
+
+    std::vector<std::string> strOptions = {};
+    std::vector<std::string> boolOptions = {};
+    std::vector<std::string> intOptions = {};
+    std::vector<std::string> doubleOptions = {};
+    std::vector<std::string> strvecOptions = {};
+    std::vector<std::string> intvecOptions = {};
+    std::vector<std::string> doublevecOptions = {};
+
+    extractOptions( this, strOptions, boolOptions, intOptions, doubleOptions, strvecOptions, intvecOptions, doublevecOptions,
+                    strOptionsValue, boolOptionsValue, intOptionsValue, doubleOptionsValue, strvecOptionsValue, intvecOptionsValue, doublevecOptionsValue );
+
+    auto anchor_tool_domain = lfAnchorINST->get_anchor_tool_domain();
+
+    switch ( anchor_tool_domain )
+    {
+    case lf::misc::E_LF_ANCHOR_TOOL::E_LF_ANCHOR_TOOL_LOGIC_LSILS:
+      lf::logic::lsnbu::xmgrs();
+      break;
+    default:
+      std::cerr << "Unsupported anchor domain, please use anchor to set the anchor!" << std::endl;
+      return 0;
+    }
+    return 1;
+  }
+}; // class CmdLfLogicXMGResub
 
 } // namespace tcl
 } // namespace lf

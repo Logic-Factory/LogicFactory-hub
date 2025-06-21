@@ -87,6 +87,17 @@ int registerCmds()
   LF_MACOR_REGISTER_TCL_CMD( CmdLfLogicResub, "resub" );
   LF_MACOR_REGISTER_TCL_CMD( CmdLfLogicMapFPGA, "map_fpga" );
   LF_MACOR_REGISTER_TCL_CMD( CmdLfLogicMapASIC, "map_asic" );
+  
+  LF_MACOR_REGISTER_TCL_CMD( CmdLfLogicExactMap, "exact_map" );
+  LF_MACOR_REGISTER_TCL_CMD( CmdLfLogicLutResyn, "lut_resyn" );
+  LF_MACOR_REGISTER_TCL_CMD( CmdLfLogicMighty, "mighty" );
+  LF_MACOR_REGISTER_TCL_CMD( CmdLfLogicXAG1, "xag1" );
+  LF_MACOR_REGISTER_TCL_CMD( CmdLfLogicXAG2, "xag2" );
+  LF_MACOR_REGISTER_TCL_CMD( CmdLfLogicXAGBalance, "xagba" );
+  LF_MACOR_REGISTER_TCL_CMD( CmdLfLogicXAGResub, "xagrs" );
+  LF_MACOR_REGISTER_TCL_CMD( CmdLfLogicXAGRewrite, "xagrw" );
+  LF_MACOR_REGISTER_TCL_CMD( CmdLfLogicXMGResub, "xmgrs" );
+  LF_MACOR_REGISTER_TCL_CMD( CmdLfLogicXMGRewrite, "xmgrw" );
 
   //////////////////////////////////////////////////////////
   // netlist
