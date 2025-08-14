@@ -99,6 +99,18 @@ int registerCmds()
   LF_MACOR_REGISTER_TCL_CMD( CmdLfLogicXMGResub, "xmgrs" );
   LF_MACOR_REGISTER_TCL_CMD( CmdLfLogicXMGRewrite, "xmgrw" );
 
+
+  LF_MACOR_REGISTER_TCL_CMD( CmdLfLogicRLTestBasic, "rl_gene_basic" );
+  LF_MACOR_REGISTER_TCL_CMD( CmdLfLogicRLTestGlitch, "rl_gene_glitch" );
+  LF_MACOR_REGISTER_TCL_CMD( CmdLfLogicDITT, "ditt" );
+  LF_MACOR_REGISTER_TCL_CMD( CmdLfLogicMSV, "msv" );
+  LF_MACOR_REGISTER_TCL_CMD( CmdLfLogicSSV, "ssv" );
+  LF_MACOR_REGISTER_TCL_CMD( CmdLfLogicSSVIncremental, "ssv_incremental" );
+  LF_MACOR_REGISTER_TCL_CMD( CmdLfLogicSSVPower, "ssv_power" );
+  LF_MACOR_REGISTER_TCL_CMD( CmdLfLogicLutRewrite, "lut_rewrite" );
+  LF_MACOR_REGISTER_TCL_CMD( CmdLfLogicTechMapping, "tech_mapping" );
+  LF_MACOR_REGISTER_TCL_CMD( CmdLfLogicCalculatePower, "calculate_power" );
+
   //////////////////////////////////////////////////////////
   // netlist
   //////////////////////////////////////////////////////////

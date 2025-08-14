@@ -1,0 +1,158 @@
+# Benchmark "ctrl" written by ABC on Mon Sep 11 23:27:27 2023
+.model ctrl
+.inputs opcode[0] opcode[1] opcode[2] opcode[3] opcode[4] op_ext[0] \
+ op_ext[1]
+.outputs sel_reg_dst[0] sel_reg_dst[1] sel_alu_opB[0] sel_alu_opB[1] \
+ alu_op[0] alu_op[1] alu_op[2] alu_op_ext[0] alu_op_ext[1] alu_op_ext[2] \
+ alu_op_ext[3] halt reg_write sel_pc_opA sel_pc_opB beqz bnez bgez bltz \
+ jump Cin invA invB sign mem_write sel_wb
+.names new_n37_ new_n36_ opcode[2] sel_reg_dst[0]
+-00 1
+0-1 1
+.names opcode[1] opcode[0] opcode[3] opcode[4] new_n36_
+-111 0
+1-11 0
+.names opcode[1] opcode[3] opcode[4] new_n37_
+-11 0
+100 0
+.names new_n42_ opcode[1] new_n39_ opcode[2] sel_reg_dst[1]
+--10 1
+11-1 1
+.names new_n41_ new_n40_ opcode[1] new_n39_
+-10 1
+1-1 1
+.names opcode[0] opcode[3] opcode[4] new_n40_
+011 1
+.names opcode[3] opcode[4] new_n41_
+01 1
+.names opcode[3] opcode[4] new_n42_
+00 1
+.names opcode[2] new_n44_ sel_alu_opB[0]
+01 1
+.names opcode[0] opcode[1] opcode[3] opcode[4] new_n44_
+-110 1
+0011 1
+0101 1
+.names new_n46_ new_n41_ opcode[2] sel_alu_opB[1]
+-11 1
+1-0 1
+.names opcode[0] opcode[1] opcode[3] opcode[4] new_n46_
+--01 1
+-010 1
+00-1 1
+.names new_n41_ opcode[0] new_n48_ opcode[2] alu_op[0]
+--10 1
+11-1 1
+.names new_n50_ opcode[0] new_n49_ opcode[1] new_n48_
+--11 1
+01-1 1
+.names opcode[0] opcode[3] opcode[4] op_ext[0] new_n49_
+0111 1
+.names op_ext[0] op_ext[1] opcode[4] opcode[3] new_n50_
+--01 0
+11-1 0
+.names new_n52_ new_n41_ opcode[2] opcode[1] alu_op[1]
+-111 1
+0-01 1
+.names op_ext[1] opcode[4] opcode[3] new_n52_
+--0 1
+01- 1
+.names opcode[3] opcode[4] new_n54_ opcode[2] alu_op[2]
+--00 1
+11-1 1
+.names opcode[1] opcode[0] opcode[3] opcode[4] new_n54_
+--00 1
+-011 1
+0-11 1
+.names opcode[1] new_n40_ new_n56_ opcode[2] alu_op_ext[0]
+--01 1
+01-0 1
+.names opcode[1] opcode[0] opcode[3] opcode[4] new_n56_
+-111 0
+1-00 0
+.names new_n59_ new_n58_ opcode[2] opcode[1] alu_op_ext[1]
+-101 1
+0-11 1
+.names opcode[0] new_n41_ new_n58_
+01 1
+.names opcode[3] opcode[4] new_n59_
+01 1
+10 1
+.names new_n42_ opcode[1] new_n61_ opcode[2] alu_op_ext[2]
+--10 1
+11-1 1
+.names opcode[0] opcode[3] opcode[1] opcode[4] new_n61_
+-101 1
+0011 1
+.names new_n63_ new_n64_ new_n41_ opcode[2] alu_op_ext[3]
+--01 0
+00-0 0
+.names opcode[1] opcode[3] opcode[4] new_n63_
+001 1
+010 1
+.names opcode[0] opcode[4] opcode[3] opcode[1] new_n64_
+--11 1
+11-1 1
+.names opcode[0] opcode[1] opcode[2] new_n42_ halt
+0001 1
+.names new_n68_ new_n67_ opcode[2] reg_write
+-00 1
+0-1 1
+.names opcode[1] opcode[0] opcode[4] opcode[3] new_n67_
+--00 1
+00-0 1
+.names opcode[3] opcode[1] opcode[4] new_n68_
+-00 1
+1-0 1
+.names new_n42_ opcode[0] opcode[2] sel_pc_opA
+111 1
+.names opcode[0] new_n42_ opcode[2] sel_pc_opB
+011 1
+.names opcode[0] opcode[1] new_n72_ opcode[2] beqz
+0011 1
+.names opcode[4] opcode[3] new_n72_
+01 1
+.names opcode[1] opcode[0] new_n72_ opcode[2] bnez
+0111 1
+.names new_n72_ opcode[0] opcode[1] opcode[2] bgez
+1111 1
+.names opcode[0] new_n72_ opcode[1] opcode[2] bltz
+0111 1
+.names new_n42_ opcode[2] jump
+11 1
+.names new_n79_ new_n78_ new_n81_ Cin
+-10 1
+0-0 1
+.names opcode[1] opcode[0] new_n72_ new_n78_
+011 1
+.names new_n80_ opcode[1] opcode[0] opcode[2] new_n79_
+---1 0
+011- 0
+.names op_ext[0] opcode[4] opcode[3] new_n80_
+--0 1
+01- 1
+.names new_n82_ opcode[2] new_n81_
+01 1
+.names opcode[1] opcode[0] opcode[3] opcode[4] new_n82_
+-011 1
+0-11 1
+.names opcode[2] new_n84_ invA
+01 1
+.names new_n85_ new_n72_ opcode[1] opcode[0] new_n84_
+-101 1
+1-11 1
+.names op_ext[1] opcode[4] op_ext[0] opcode[3] new_n85_
+0111 1
+.names new_n81_ new_n87_ invB
+00 1
+.names new_n50_ opcode[1] opcode[0] opcode[2] new_n87_
+---1 0
+011- 0
+.names opcode[2] opcode[0] opcode[1] new_n41_ mem_write
+0001 1
+0111 1
+.names opcode[1] opcode[2] new_n41_ opcode[0] sel_wb
+0011 1
+.names sign
+ 1
+.end

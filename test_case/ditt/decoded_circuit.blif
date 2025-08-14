@@ -1,0 +1,13 @@
+## Benchmark written by FastEx
+.model top
+.inputs x0 x1 x2 x3 
+.outputs x6 x7 x8 
+.names x1 x3 x5
+.11 1
+.names x2 x5 x6
+.11 1
+.names x4 x6 x7
+.01 1
+.names x6 x7 x8
+.10 1
+.end

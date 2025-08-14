@@ -1,0 +1,6 @@
+Power Consumption Breakdown:
+  Static Power:    0.000905548 W
+  Dynamic Power:   0.0035703 W
+  Internal Power:  0.0242268 W
+  Wire Power:      1.0934 W
+  Total Power:     1.1221 W

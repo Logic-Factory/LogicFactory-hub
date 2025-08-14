@@ -1,0 +1,245 @@
+# Benchmark "int2float" written by ABC on Mon Sep 11 23:31:38 2023
+.model int2float
+.inputs B[0] B[1] B[2] B[3] B[4] B[5] B[6] B[7] B[8] B[9] B[10]
+.outputs M[0] M[1] M[2] M[3] E[0] E[1] E[2]
+.names new_n21_ new_n28_ B[10] new_n33_ M[0]
+--11 0
+01-1 0
+.names new_n25_ B[5] new_n22_ B[9] new_n21_
+--00 1
+00-0 1
+.names B[4] B[5] new_n23_ B[8] new_n22_
+--00 0
+01-1 0
+.names new_n24_ B[4] B[7] B[3] new_n23_
+-011 0
+-110 0
+1--1 0
+.names B[2] B[7] B[5] B[1] new_n24_
+0011 1
+.names B[4] B[8] new_n26_ new_n27_ new_n25_
+--01 0
+11-- 0
+.names B[8] B[1] B[0] B[4] new_n26_
+-011 0
+-101 0
+0-10 0
+.names B[6] B[7] new_n27_
+00 1
+.names B[9] new_n29_ B[5] B[6] new_n28_
+-010 0
+1-01 0
+.names new_n32_ B[2] B[1] new_n30_ new_n29_
+---0 0
+001- 0
+.names B[1] B[2] new_n31_ B[9] new_n30_
+---1 0
+011- 0
+.names B[7] B[8] new_n31_
+00 1
+.names B[3] B[8] B[7] B[4] new_n32_
+--00 0
+00-1 0
+.names B[7] B[10] new_n34_ B[6] new_n33_
+--01 0
+11-0 0
+.names new_n36_ new_n35_ B[10] B[7] new_n34_
+--01 1
+-00- 1
+0--1 1
+.names B[8] B[9] B[2] B[3] new_n35_
+0001 1
+0010 1
+.names B[8] B[9] new_n36_
+11 1
+.names B[8] new_n53_ new_n61_ new_n38_ M[1]
+-100 1
+1-00 1
+.names new_n39_ B[5] new_n44_ B[10] new_n38_
+--00 1
+01-0 1
+.names new_n43_ B[6] new_n40_ B[3] new_n39_
+--01 0
+01-- 0
+.names new_n41_ B[1] B[2] new_n42_ new_n40_
+---1 0
+011- 0
+.names B[8] B[9] new_n27_ B[4] new_n41_
+--10 0
+00-1 0
+.names B[8] B[9] B[4] B[7] new_n42_
+0011 1
+.names B[4] B[8] B[7] B[9] new_n43_
+--11 0
+11-0 0
+.names new_n52_ B[6] new_n45_ B[5] new_n44_
+--00 0
+00-- 0
+.names new_n46_ new_n48_ B[6] new_n50_ new_n45_
+--11 1
+01-1 1
+.names B[1] B[0] B[2] new_n47_ new_n46_
+-001 1
+1111 1
+.names B[7] B[4] new_n47_
+01 1
+.names B[9] B[8] new_n49_ B[1] new_n48_
+--00 0
+01-- 0
+.names B[4] B[9] B[2] B[7] new_n49_
+--00 0
+00-- 0
+.names new_n51_ B[8] B[9] B[7] new_n50_
+--10 0
+0001 0
+.names B[3] B[4] new_n51_
+11 1
+.names B[4] B[8] B[7] B[9] new_n52_
+--01 0
+01-0 0
+.names B[6] B[10] new_n54_ B[7] new_n53_
+--00 0
+01-- 0
+.names new_n55_ new_n58_ new_n59_ B[10] new_n54_
+0000 1
+.names B[1] new_n56_ new_n57_ B[3] new_n55_
+--10 1
+01-0 1
+.names B[6] B[5] new_n56_
+01 1
+.names B[4] B[9] B[6] new_n57_
+001 1
+.names B[3] new_n56_ new_n57_ B[2] new_n58_
+--10 1
+01-0 1
+.names B[9] B[4] B[6] new_n60_ new_n59_
+0111 1
+.names B[2] B[3] new_n60_
+11 1
+.names B[9] B[8] new_n62_ B[10] new_n61_
+0111 1
+.names B[6] B[7] new_n62_
+11 1
+.names new_n78_ new_n64_ B[10] new_n80_ M[2]
+--11 0
+00-1 0
+.names new_n65_ B[8] new_n76_ B[9] new_n64_
+--00 1
+00-0 1
+.names new_n71_ new_n66_ B[7] new_n73_ new_n65_
+--11 1
+00-1 1
+.names new_n67_ B[1] new_n69_ B[2] new_n66_
+--11 1
+01-1 1
+.names B[4] B[3] B[5] new_n68_ new_n67_
+---1 0
+011- 0
+.names B[3] B[6] B[4] B[0] new_n68_
+0011 1
+.names B[4] B[6] new_n70_ B[5] new_n69_
+--10 1
+00-0 1
+.names B[1] B[0] B[3] B[4] new_n70_
+-011 1
+0-11 1
+.names new_n72_ B[4] new_n71_
+01 1
+.names B[2] B[6] B[5] B[3] new_n72_
+--10 0
+00-1 0
+.names new_n75_ new_n74_ new_n51_ new_n73_
+-11 1
+0-0 1
+.names B[2] B[1] B[5] B[6] new_n74_
+-010 0
+1-01 0
+.names B[5] B[6] new_n75_
+11 1
+.names new_n77_ new_n62_ B[4] B[5] new_n76_
+-0-0 1
+-00- 1
+1-11 1
+.names B[3] B[2] B[6] B[7] new_n77_
+-010 0
+1-01 0
+.names new_n79_ B[8] new_n78_
+01 1
+.names B[4] B[5] B[7] B[6] new_n79_
+--10 0
+1101 0
+.names new_n82_ B[9] new_n81_ new_n62_ new_n80_
+--01 0
+01-- 0
+.names B[9] B[5] B[10] B[8] new_n81_
+--11 0
+11-0 0
+.names B[7] B[5] B[8] B[10] new_n82_
+--00 1
+11-0 1
+.names new_n84_ B[3] B[9] B[10] M[3]
+0000 0
+.names new_n85_ B[4] B[8] new_n86_ new_n84_
+---1 0
+111- 0
+.names B[2] new_n62_ B[5] new_n85_
+011 1
+.names B[4] B[5] B[8] new_n27_ new_n86_
+0001 1
+.names new_n88_ B[8] new_n95_ B[10] E[0]
+--00 0
+00-0 0
+.names new_n60_ new_n93_ new_n89_ new_n88_
+-11 1
+0-1 1
+.names new_n56_ B[7] B[3] new_n90_ new_n89_
+--11 1
+00-1 1
+.names B[7] new_n75_ new_n91_ new_n92_ new_n90_
+-101 1
+0-01 1
+.names B[2] B[1] new_n56_ new_n91_
+-01 1
+0-1 1
+.names B[7] B[6] B[4] B[9] new_n92_
+--10 1
+01-0 1
+.names new_n94_ new_n47_ B[5] B[6] new_n93_
+-111 0
+1-00 0
+.names B[0] B[1] new_n94_
+11 1
+.names new_n75_ B[7] B[9] new_n96_ new_n95_
+--00 1
+11-0 1
+.names B[8] B[2] B[3] new_n97_ new_n96_
+-101 1
+1-11 1
+.names B[9] B[4] B[5] new_n62_ new_n97_
+0111 1
+.names new_n104_ new_n99_ B[4] new_n102_ E[1]
+--01 0
+00-1 0
+.names new_n94_ new_n100_ new_n101_ B[2] new_n99_
+--11 1
+11-1 1
+.names B[5] B[3] new_n31_ new_n100_
+011 1
+.names B[5] B[6] B[7] B[8] new_n101_
+1111 1
+.names new_n31_ new_n103_ B[9] B[10] new_n102_
+-100 1
+0-00 1
+.names new_n60_ B[4] B[5] B[6] new_n103_
+--00 1
+1111 1
+.names new_n105_ B[5] B[7] new_n104_
+111 1
+.names B[3] B[6] B[8] new_n105_
+111 1
+.names new_n51_ new_n75_ B[2] new_n107_ E[2]
+---0 1
+111- 1
+.names B[9] B[10] new_n31_ new_n107_
+001 1
+.end

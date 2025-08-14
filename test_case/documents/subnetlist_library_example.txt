@@ -1,0 +1,10 @@
+T 1
+# Type of this compressed optimal netlist library format
+# Type 1, label and additional mark is "none"; Type2, mark_1 = <number of stratified signal probability> label = <<input_1 signal probability><input_2 signal probability>>
+A <number_of_additional_mark> <mark_1> ... <mark_n>
+S <number_of_netlists> <number_of_function_inputs>
+<<Truth_table_in_hex> <label>> <number_of_nodes> <input_index1 input_index2 function_index> <input_index1 input_index2 function_index> ... <input_index1 input_index2 function_index> <output_node_index>
+...
+E
+# End of file
+# Line started with ‘#’ is comment

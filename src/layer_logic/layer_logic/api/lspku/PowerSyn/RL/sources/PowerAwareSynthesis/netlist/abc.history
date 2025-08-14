@@ -1,0 +1,6 @@
+source -s abc.rc
+read mapped.v
+read_liberty gsc145nm.lib 
+read_lib gsc145nm.lib 
+read_verilog mapped.v 
+read_verilog -m mapped.v 

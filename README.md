@@ -18,6 +18,26 @@ $ cd /workspace
 $ mkdir -p build && cd build
 $ cmake -G Ninja ..
 $ ninja
+
+# 1. 克隆代码库
+git clone https://github.com/Logic-Factory/LogicFactory.git
+
+# 2. 进入目录并初始化子模块
+cd LogicFactory
+git submodule update --init --recursive
+
+# 3. 构建 Docker 镜像（无需修改）
+docker build -t logic-factory:latest .
+
+# 4. 运行容器（关键：添加 --gpus all 启用 GPU 访问）
+docker run -it --gpus all -v ../LogicFactory-hub-pku:/workspace logic-factory:latest
+#  ↑↑↑ 新增 --gpus all 选项，允许容器访问主机所有 GPU
+
+# 5. 进入容器后，正常构建（无需修改）
+cd /workspace
+mkdir -p build && cd build
+cmake -G Ninja ..
+ninja
 ```
 
 - method2: install dependencies and compile 

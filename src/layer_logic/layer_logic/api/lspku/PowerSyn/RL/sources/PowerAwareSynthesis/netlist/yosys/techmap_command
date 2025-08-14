@@ -1,0 +1,6 @@
+read_verilog your_design.v
+synth
+techmap
+abc -liberty you_liberty.lib
+clean
+write_verilog new_file.v

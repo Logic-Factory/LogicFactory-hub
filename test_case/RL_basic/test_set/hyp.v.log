@@ -1,0 +1,16 @@
+0,1e+09,0.166667, 0.166667, 0.166667, 0.166667, 0.166667, 0.166667, 
+1,1e+09,0.166667, 0.166667, 0.166667, 0.166667, 0.166667, 0.166667, 
+2,1e+09,0.166667, 0.166667, 0.166667, 0.166667, 0.166667, 0.166667, 
+3,1e+09,0.166667, 0.166667, 0.166667, 0.166667, 0.166667, 0.166667, 
+4,1e+09,0.166667, 0.166667, 0.166667, 0.166667, 0.166667, 0.166667, 
+5,1e+09,0.166667, 0.166667, 0.166667, 0.166667, 0.166667, 0.166667, 
+6,1e+09,0.166667, 0.166667, 0.166667, 0.166667, 0.166667, 0.166667, 
+7,1e+09,0.166667, 0.166667, 0.166667, 0.166667, 0.166667, 0.166667, 
+8,1e+09,0.166667, 0.166667, 0.166667, 0.166667, 0.166667, 0.166667, 
+9,1e+09,0.166667, 0.166667, 0.166667, 0.166667, 0.166667, 0.166667, 
+Best Flow(s) (#max=5):
+strash;read /rshome/sunan.zou/FlowTune/NanGate_15nm_OCL.lib;rewrite;dc2;dc2;rewrite;resub -K 8;rewrite -z;dc2;rewrite;refactor;refactor -z;resub -K 8;resub -K 8;dc2;refactor;refactor -z;rewrite -z;rewrite;refactor;rewrite -z;refactor;refactor -z;rewrite;resub -K 8;refactor;rewrite -z;refactor -z;refactor -z;resub -K 8;rewrite -z;dc2;strash;
+strash;read /rshome/sunan.zou/FlowTune/NanGate_15nm_OCL.lib;rewrite;rewrite;rewrite -z;refactor -z;refactor -z;refactor;rewrite;dc2;dc2;resub -K 8;refactor -z;refactor -z;rewrite -z;rewrite -z;refactor;rewrite;refactor;rewrite -z;resub -K 8;refactor;dc2;rewrite -z;rewrite;resub -K 8;resub -K 8;refactor;resub -K 8;refactor -z;dc2;dc2;strash;
+strash;read /rshome/sunan.zou/FlowTune/NanGate_15nm_OCL.lib;rewrite;rewrite -z;dc2;refactor -z;rewrite;refactor;refactor;rewrite -z;rewrite -z;rewrite -z;refactor -z;dc2;rewrite -z;resub -K 8;rewrite;refactor;refactor;refactor -z;resub -K 8;dc2;dc2;dc2;resub -K 8;resub -K 8;refactor;refactor -z;refactor -z;rewrite;resub -K 8;rewrite;strash;
+strash;read /rshome/sunan.zou/FlowTune/NanGate_15nm_OCL.lib;rewrite;refactor -z;rewrite -z;rewrite -z;resub -K 8;rewrite -z;resub -K 8;dc2;refactor -z;dc2;rewrite;dc2;rewrite -z;refactor;refactor;refactor;resub -K 8;resub -K 8;rewrite;refactor -z;dc2;resub -K 8;refactor;refactor -z;refactor -z;rewrite;rewrite -z;refactor;rewrite;dc2;strash;
+strash;read /rshome/sunan.zou/FlowTune/NanGate_15nm_OCL.lib;rewrite;resub -K 8;resub -K 8;refactor -z;refactor;rewrite -z;refactor -z;rewrite -z;refactor;refactor -z;rewrite;refactor -z;resub -K 8;refactor;rewrite;dc2;rewrite -z;refactor;rewrite -z;rewrite;refactor;resub -K 8;rewrite -z;dc2;refactor -z;dc2;rewrite;dc2;resub -K 8;dc2;strash;
